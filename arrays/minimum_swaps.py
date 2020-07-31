@@ -1,4 +1,6 @@
-# Complete the minimumSwaps function below.
+# problem link: https://www.hackerrank.com/challenges/minimum-swaps-2/problem
+# Difficulty: Medium
+
 def minimumSwaps(arr):    
     # all arr are in the [1, 2, 3...] form
     swaps = 0
