@@ -1,5 +1,6 @@
 // question: https://vimeo.com/357608978
 // Description: given a tree, returns the average value for each level
+// using DFS
 
 /*
         2
