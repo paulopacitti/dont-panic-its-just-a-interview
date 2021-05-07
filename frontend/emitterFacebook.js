@@ -23,14 +23,14 @@ class Emitter {
   }
 
   subscribe(name, callback) {
-    if (!(name in this.events))
-      this.events[name] = [callback]
+    if (!(name in this.events)) {
+      this.events[name] = new Set(); 
+      this.events[name].add(callback);
+    }
     else
-      this.events.push(callback);
+      this.events[name].push(callback);
     return {
-      name,
-      callback,
-      release: () => this.delete(name, callback),
+      release: () => this.events[name].delete(callback),
     }
   }
 
@@ -39,10 +39,6 @@ class Emitter {
       this.events[name].forEach(fn => fn(...args));
     else
       console.log("this event is not registered!")
-  }
-
-  delete(name, callback) {
-    this.events[name] = this.events[name].filter((fn) => fn != callback);
   }
 }
 

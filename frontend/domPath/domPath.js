@@ -76,4 +76,5 @@ function getTwinNode(treeA, treeB, nodeA) {
   return nodeB;
 }
 
-// time complexity????
+// time complexity: O(depth(nodeA))
+// space complexity: O(depth(nodeA))
