@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf8">
+  <script>
+    class Renderer {
+      constructor() {}
+
+      render(template, documentBody){
+        let dom = this.createElement(template);
+        documentBody.appendChild(dom);
+      }
+
+      createElement(template) {
+        if("type" in template) {
+          let element = document.createElement(template["type"]);
+          Object.keys(template).forEach((prop) => {
+            if(prop != "children")
+              element[prop] = template[prop];
+          });
+          if("children" in template)
+            template.children.forEach((child)=> element.appendChild(this.createElement(child)));
+          return element;
+        }
+        else
+          return null
+      }
+    }
+
+    let template = {
+      type: "div",
+      id: "root",
+      children: [
+        { 
+          type: "h1",
+          textContent: "Hey,",
+          id: "text1",
+        },
+        { 
+          type: "h1",
+          textContent: "Nice work!",
+          id: "text2",
+        },
+      ],
+    };
+
+    window.onload = () => {
+      let renderer = new Renderer();
+      renderer.render(template, document.body);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
