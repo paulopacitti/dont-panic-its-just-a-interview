@@ -27,7 +27,7 @@ function adaptedBfs(node) {
 
   let queue = [];
   let list = []
-  queue.push(node);
+  queue.unshift(node);
   list.push(node)
 
   while(queue.length > 0) {
@@ -36,7 +36,7 @@ function adaptedBfs(node) {
     let children = [element.left, element.right];
     children.forEach(child => {
       if(child != null){
-        queue.push(child);
+        queue.unshift(child);
         currentDepth.push(child);
       }
     });
