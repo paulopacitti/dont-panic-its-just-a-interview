@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+  <head>
+    <style>
+      .title {
+        margin-left: 1%;
+      }
+    </style>
+    <script>
+      function move() {
+        let marginLeft = 1;
+        setInterval(() => {
+          const title = document.querySelector(".title");
+          title.style.marginLeft = `${marginLeft}%`;
+          if(marginLeft >= 100)
+            marginLeft = 0;
+          else
+            marginLeft += 1;
+        }, 10)
+      }
+      window.onload = () => {
+        move();
+      };
+    </script>
+  </head>
+  <body>
+    <p class="title">eae</h1>
+  </body>
+</html>
