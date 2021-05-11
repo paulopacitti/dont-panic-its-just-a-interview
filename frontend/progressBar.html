@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <head>
+   <style>
+     .container {
+        background-color: grey;
+        margin-left: 10px;
+        margin-bottom: 10px ;
+        height: 40px;
+        width: 100px;
+     }
+
+     .bar {
+        height: 100%;
+        background-color: green;
+        width: 0%;
+     }
+   </style>
+   <script>
+      function start(seconds) {
+        const bar = document.querySelector(".bar");
+        const progress = document.querySelector("#progress");
+        let percent = 0;
+        const interval = setInterval(() => {
+          bar.style.width = percent.toString() + "%";
+          progress.innerText = "Progress: " + percent.toString() + "%";
+          if(percent >= 100)
+            clearInterval(interval)
+          percent += 5;
+        }, (seconds*1000));
+      }
+   </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bar"></div>
+    </div>
+    <p id="progress"></p>
+    <button onClick="start(2)">Start</button>
+  </body>
+</html>
