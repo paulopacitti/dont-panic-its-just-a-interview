@@ -23,15 +23,10 @@ class Emitter {
   }
 
   subscribe(name, callback) {
-    if (!(name in this.events)) {
+    if (!(name in this.events))
       this.events[name] = new Set(); 
-      this.events[name].add(callback);
-    }
-    else
-      this.events[name].push(callback);
-    return {
-      release: () => this.events[name].delete(callback),
-    }
+    this.events[name].add(callback);
+    return { release: () => this.events[name].delete(callback) };
   }
 
   emit(name, ...args) {
@@ -43,8 +38,8 @@ class Emitter {
 }
 
 let emitter = new Emitter();
-let callback1 = (...args) => console.log(...args)
-let callback2 = () => console.log("callback2")
+let callback1 = (...args) => console.log(...args);
+let callback2 = () => console.log("callback2");
 sub1 = emitter.subscribe('function_1', callback1);
 sub2 = emitter.subscribe('function_2', callback2);
 emitter.emit('function_1', 'hey', 'wassup', 'what');
