@@ -42,7 +42,7 @@ function buildMapOfSets(array) {
 function excludeItems(items, excludes) {
   let set = buildMapOfSets(excludes);
   let result = items.filter(element => {
-    return !Object.keys(element).some((key) => !set.get("k").has(key) || !set.get("v").has(element[key]));
+    return !Object.keys(element).some((key) => set.get("k").has(key) && set.get("v").has(element[key]));
   });
   return result;
 }
