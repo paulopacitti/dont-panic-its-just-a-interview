@@ -24,7 +24,6 @@ function isBalanced(s) {
     return "NO";
   else
     return "YES";
-
 }
 
 const s = "[{";

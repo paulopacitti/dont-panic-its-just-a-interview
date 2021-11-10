@@ -47,7 +47,7 @@ class Node:
        // this is a node of the tree , which contains info as data, left , right
 '''
 def height(root):
-    if root == None: # if doesent have children, then return -1 to sum with 1 and result in 0
+    if root == None: # if doesnt have children, then return -1 to sum with 1 and result in 0
         return -1
     max_left = height(root.left) # find maximum size in left side
     max_right = height(root.right) # find maximum size in right side

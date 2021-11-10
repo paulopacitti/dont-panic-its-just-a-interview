@@ -1,6 +1,5 @@
 // description: https://www.educative.io/blog/cracking-top-facebook-coding-interview-questions#questions
 
-
 class Node {
   Node() {
     this.left = null;

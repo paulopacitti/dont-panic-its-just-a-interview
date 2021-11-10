@@ -3,10 +3,10 @@ const floodAndFill = (frame, x, y, newColor) => {
   return floodAndFillUtil(frame, x, y, previousColor, newColor);
 };
 
+// BFS approach
 const floodAndFillUtil = (frame, x, y, previousColor, newColor) => {
   let queue = [];
   let visited = Array(frame.length).fill(Array(frame[0].length).fill(false));
-  visited.fill(false);
   queue.push([x,y]);
   while(queue.length > 0) {
     let [currentX, currentY] = queue.shift();
