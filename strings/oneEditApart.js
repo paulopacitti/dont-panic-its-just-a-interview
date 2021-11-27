@@ -46,6 +46,7 @@ function oneEditApart(firstWord, secondWord){
 }
 
 console.log(oneEditApart('cat', 'ca'));
+console.log("arroz")
 
 /*
 Time complexity: O(m), where "m" is the length of the longest word;

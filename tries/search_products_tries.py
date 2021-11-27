@@ -1,4 +1,11 @@
 # description: https://leetcode.com/problems/search-suggestions-system/
+
+class TrieNode:
+    def __init__(self, value = None, end = False):
+        self.end = end
+        self.value = value
+        self.children = {}
+
 def suggestedProducts(products, searchWord):
     trie = build_trie(products)
     results = []
@@ -7,12 +14,6 @@ def suggestedProducts(products, searchWord):
         results.append(suggestions)
 
     return results
-
-class TrieNode:
-    def __init__(self, value = None, end = False):
-        self.end = end
-        self.value = value
-        self.children = {}
 
 def dfs(root, word):
     string = ""

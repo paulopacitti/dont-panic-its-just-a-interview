@@ -1,4 +1,5 @@
 # description: https://leetcode.com/problems/robot-bounded-in-circle
+# tags: amazon greedy
 
 def is_robot_bounded(instructions):
     x = 0

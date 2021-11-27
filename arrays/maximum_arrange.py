@@ -10,15 +10,13 @@ def arrange(a, k):
                 max_value = a[i]
                 max_index = i
         for i in range(max_index, start, -1):
-            temp = a[i]
-            a[i] = a[i-1]
-            a[i-1] = temp
+            a[i], a[i-1] = a[i-1], a[i]
             k -= 1
         start += 1
     return a
 
-array = [2, 5, 8, 7, 9]
-k_ = 2
+array = [1,2,9,8,1,4,9,9,9]
+k_ = 4
 print(arrange(array, k_))
 
 # Time complexity: O(n²), where n is the size of the array, since in the worst case k could be n

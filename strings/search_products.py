@@ -1,4 +1,6 @@
 # description: https://leetcode.com/problems/search-suggestions-system/
+# tags: amazon
+
 def suggestedProducts(products, searchWord):
     results = []
     for i in range(1, len(searchWord) + 1):

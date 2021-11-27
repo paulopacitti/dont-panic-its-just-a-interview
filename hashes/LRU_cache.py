@@ -1,4 +1,5 @@
 # description: https://leetcode.com/problems/lru-cache
+# tags: amazon greedy
 
 class LRUCache:
     def __init__(self, capacity: int):
