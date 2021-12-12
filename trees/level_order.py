@@ -48,7 +48,7 @@ def levelOrder(root):
     queue.append(root)
     while len(queue) > 0:
         depth = []
-        current = queue.pop(0) # removes from ythe beggining (JavaScript's shift)
+        current = queue.pop(0) # removes from the beggining (JavaScript's shift)
         children = [current.left, current.right]
         for child in children:
             if child != None:

@@ -44,12 +44,12 @@ def k_closest_heap(points, k):
 # Space Complexity: O(k)
 
 def k_closest_quick_select(points, k):
-    points_heap = []
+    points = []
     for i in range(len(points)):
         current_distance = math.sqrt(((points[i][0])**2) + ((points[i][1])**2))
-        points_heap.append((current_distance, points[i]))
-    quick_select(points_heap, 0, len(points_heap)-1, k)
-    return [points_heap[i][1] for i in range(0, k)]
+        points.append((current_distance, points[i]))
+    quick_select(points, 0, len(points)-1, k)
+    return [points[i][1] for i in range(0, k)]
 
 def quick_select(array, left, right, k):
     while left < right:
@@ -74,5 +74,5 @@ def partition(array, left, right):
 # Time Complexity: Theta(n) = O(n) in the average, O(n²) in the worst case
 # Space Complexity: O(n), where n is the number of points (to calculate the distance)
 
-a = [[3,3],[5,-1],[-2,4]]
+a = [[3,3],[5,-1],[-2,4],[12,-4], [-1,-2],[3,1]]
 print(k_closest_quick_select(a, 2))
