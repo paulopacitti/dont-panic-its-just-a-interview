@@ -11,7 +11,8 @@ def merge(intervals):
             current = intervals[i].copy()
             i += 1
         else:
-            if (intervals[i][0] >= current[0] and intervals[i][0] <= current[1]) or (intervals[i][1] >= current[0] and intervals[i][1] <= current[1]):
+            if (intervals[i][0] >= current[0] and intervals[i][0] <= current[1]) \
+                    or (intervals[i][1] >= current[0] and intervals[i][1] <= current[1]):
                 if current[0] > intervals[i][0]:
                     current[0] = intervals[i][0]
                 if current[1] < intervals[i][1]:

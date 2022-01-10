@@ -1,3 +1,7 @@
+## LeetcdCode Amazon problems list:
+- https://github.com/krishnadey30/LeetCode-Questions-CompanyWise
+- https://github.com/xizhengszhang/Leetcode_company_frequency/blob/master/Amazon%20-%20LeetCode.pdf
+
 ## Most Popular Problems for Amazon (last 6 months):
 - Robot Bounded In Circle (190 times): https://leetcode.com/problems/robot-bounded-in-circle/
 - LRU Cache (97 times): https://leetcode.com/problems/lru-cache/
