@@ -57,7 +57,7 @@ def quick_select(array, left, right, k):
         if pivot < k:
             left = pivot + 1
         elif pivot > k:
-            right = pivot - 1;
+            right = pivot - 1
         else:
             return
 
