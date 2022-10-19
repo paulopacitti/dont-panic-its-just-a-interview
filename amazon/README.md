@@ -18,12 +18,12 @@
 - Maximum Subarray (29 times): https://leetcode.com/problems/maximum-subarray/
 - Longest Substring Without Repeating Characters (29 times): https://leetcode.com/problems/longest-substring-without-repeating-characters/
 - Add Two Numbers (28 times): https://leetcode.com/problems/add-two-numbers/
-- 0 Course Schedule (28 times): https://leetcode.com/problems/course-schedule/
+- Course Schedule (28 times): https://leetcode.com/problems/course-schedule/
 - Concatenated Words (26 times): https://leetcode.com/problems/concatenated-words/
 - Median of Two Sorted Arrays (24 times): https://leetcode.com/problems/median-of-two-sorted-arrays/
 - Rotting Oranges (24 times): https://leetcode.com/problems/rotting-oranges/
-- Count of Smaller Numbers After Self (23 times): https://leetcode.com/problems/- count-of-smaller-numbers-after-self/
-- Least Number of Unique Integers after K Removals (22 times): https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/
+- Count of Smaller Numbers After Self (23 times): https://leetcode.com/problems/count-of-smaller-numbers-after-self/
+- Least Number of Unique Integers after K Removals (22 times): https://leetcode.com/problems/- least-number-of-unique-integers-after-k-removals/
 - Search in Rotated Sorted Array (22 times): https://leetcode.com/problems/search-in-rotated-sorted-array/
 - Sell Diminishing-Valued Colored Balls (21 times): https://leetcode.com/problems/sell-diminishing-valued-colored-balls/
 - Integer to English Words (21 times): https://leetcode.com/problems/integer-to-english-words/
@@ -59,7 +59,7 @@
 - Asteroid Collision (10 times): https://leetcode.com/problems/asteroid-collision/
 - Next Greater Element II (10 times): https://leetcode.com/problems/next-greater-element-ii/
 - Serialize and Deserialize Binary Tree (10 times): https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
-- Design an Expression Tree With Evaluate Function (10 times): https://leetcode.com/problems/design-an-expression-tree-with-evaluate-function/
+- Design an Expression Tree With Evaluate Function (10 times): https://leetcode.com/problems/- design-an-expression-tree-with-evaluate-function/
 - Kth Smallest Element in a Sorted Matrix (9 times): https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
 - Snakes and Ladders (9 times): https://leetcode.com/problems/snakes-and-ladders/
 - Non-overlapping Intervals (9 times): https://leetcode.com/problems/non-overlapping-intervals/

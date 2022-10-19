@@ -1,0 +1,12 @@
+## Most Popular Problems for Paypal (last 6 months):
+- LRU Cache (7 times): https://leetcode.com/problems/lru-cache/
+- Happy Number (6 times): https://leetcode.com/problems/happy-number/
+- Merge Intervals (4 times): https://leetcode.com/problems/merge-intervals/
+- Longest Substring Without Repeating Characters (3 times): https://leetcode.com/problems/longest-substring-without-repeating-characters/
+- Product of Array Except Self (2 times): https://leetcode.com/problems/product-of-array-except-self/
+- Subarray Sum Equals K (2 times): https://leetcode.com/problems/subarray-sum-equals-k/
+- Reverse Words in a String (2 times): https://leetcode.com/problems/reverse-words-in-a-string/
+- Search a 2D Matrix II (2 times): https://leetcode.com/problems/search-a-2d-matrix-ii/
+- Find All Anagrams in a String (2 times): https://leetcode.com/problems/find-all-anagrams-in-a-string/
+- 3Sum (2 times): https://leetcode.com/problems/3sum/
+- Interval List Intersections (2 times): https://leetcode.com/problems/interval-list-intersections/
