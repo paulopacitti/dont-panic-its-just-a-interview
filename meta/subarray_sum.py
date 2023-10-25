@@ -9,30 +9,28 @@ def subarray_sum_naive(nums, k):
                 sums += 1
     return sums
 
+
 # Time complexity: O(n^2), where n is the number o items in the list
 # Space complexity: O(1), no extra space required
 
 
 def subarray_sum(nums, k):
-    previous_sums_dict = {}
-    sums = 0
-    current = 0
-   
-    for i in range(len(nums)): 
-        current += nums[i]
-   
-        if current == k: 
-            sums += 1        
-        if (current - k) in previous_sums_dict:
-            sums += previous_sums_dict[current - k]
-           
-        if current in previous_sums_dict:
-            previous_sums_dict[current] += 1
-        else:
-            previous_sums_dict[current] = 1
-      
-    return sums
+    subarrays = 0
+    current_sum = 0
+    previous_sum = {0: 1}
 
-nums = [1,2,3]
+    for num in nums:
+        current_sum += num
+        if current_sum - k in previous_sum:
+            subarrays += previous_sum[current_sum - k]
+        if current_sum in previous_sum:
+            previous_sum[current_sum] += 1
+        else:
+            previous_sum[current_sum] = 1
+
+    return subarrays
+
+
+nums = [1, 2, 3]
 k = 3
 subarray_sum(nums, k)
