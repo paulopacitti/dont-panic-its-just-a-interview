@@ -22,6 +22,7 @@ def diameter(root):
 def diameter_util(root, diameter):
     if root == None:
         return 0, diameter
+    
     left_height, diameter = diameter_util(root.left, diameter)
     right_height, diameter = diameter_util(root.right, diameter)
     
