@@ -1,8 +1,6 @@
 # description: https://www.geeksforgeeks.org/print-the-longest-path-from-root-to-leaf-in-a-binary-tree/
 class Node:
-     
     def __init__(self, key):
-         
         self.data = key
         self.left = None
         self.right = None

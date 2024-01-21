@@ -54,19 +54,35 @@ Apache Kafka's architecture and capabilities make it a popular choice for buildi
 
     Kafka's ability to handle sequential I/O efficiently is crucial for maintaining the order of messages and providing fault tolerance, scalability, and high throughput in handling streams of data.
 
-# 2. Interview
 
-## 2.1 Framework
+# Optimizations
+- Caching: with Redis (it uses RAM memory).
+- Connection Pool for databases: waaay faster than creating new connections
+- Avoid the n + 1 query problem: The chief symptom of this problem is that there are many, many queries being performed. Typically, this happens when you structure your code so that you first do a query to get a list of records, then subsequently do another query for each of those records. The more queries you perform, the more time it takes to get the results back, with each trip to the database server taking time and resources. In contrast, a single query, even if it's complex, can be optimized by the database server and only requires one trip to the database, which will usually be much faster than many small queries.
+- Pagination: is a technique used in software design and user interfaces to manage and display large sets of data in smaller, manageable portions or pages. It's particularly useful when presenting data to users, especially in web applications or when dealing with databases that contain extensive records. Pagination is commonly implemented using techniques like SQL's LIMIT and OFFSET clauses for database queries, or in web interfaces through frontend frameworks that support paginated data loading and display.
+- Lightweight Serialization: Lightweight serialization refers to the process of serializing data in a more efficient, compact, and often faster manner compared to traditional serialization methods. The term "lightweight" implies that the serialization process is optimized for reduced overhead, decreased data size, and improved performance, particularly in resource-constrained environments or high-throughput systems. Examples are MessagePack and protobuf.
+- Compression: Compression is a technique used in computer science and data transmission to reduce the size of files or data streams. The process involves encoding information in a more compact form, resulting in smaller file sizes or reduced data sizes for transmission. Compression offers benefits such as faster data transmission, reduced storage requirements, and improved network performance.
+
+
+# 3. Interview
+
+## 3.1 Framework
 
 1. **Introduction** (5 minutes)
-2. **Understand the Problem and estabilish design scope** (5 minutes)
+2. **Understand the Problem and estabilish design scope** (5 minutes):
    - Questions will be open-ended and vague. Focus on what's important and ask as many questions as necessary to understand problem fully.
-   - It's a red flag jump right to the solution
-   - Goal: clarify the requirements, why the system is being built, who the users ares and what features we need to build.
-   - Focus on the top few features to build. Make sure the interviewer agrees with the feature list.
-   - Ask questions about non-functional requirements. Focus on scale and performance, but others are security, consistency, freshness and accuracy.
-   - Calculate (using math) estimates to understand the idea of scale
+   - **User cases (description of sequences of events that, taken together, lead to a system doing something useful)**
+     - It's a red flag jump right to the solution
+     - Who is going to use it? **How** are they going to use it?
+     - Focus on the top few features to build. Make sure the interviewer agrees with the feature list.
+   - **Constraints (Non-functional requirements)**:
+     - Ask questions about non-functional requirements. Focus on scale and performance, but others are security, consistency, freshness and accuracy.
+     - Mainly identify traffic and data handling constraints at scale.
+     - Calculate (using math) estimates to understand the idea of scale
+     - Scale of the system such as requests per second, requests types, data written per second, data read per second
+     - Special system requirements such as multi-threading, read or write oriented.
    - At the end, you will have a feature list and a few non-functional requirements to satisfy.
+
 3. **Propose high-level design and validate the requirements with the interviewer** (20 minutes)
     - **API Design:**
        - The most common approach, is starting with a top down approach, designing the APIs. The APIs will be the ones that will sign a contract with the backend systems and the users (clients). 
@@ -89,6 +105,6 @@ Apache Kafka's architecture and capabilities make it a popular choice for buildi
    - Summarize the solution.
 6. **Q&A** (5 minutes)
 
-## 2.2 Tips:
+## 3.2 Tips:
 - The more senior the role, the more important it is to demonstrate skills on handling and suggesting the non-functional requirements.
 - Pick up the clues from body language of the interviewer to check if the solution is satisfying or not. Ask if the interviewer has any questions or concerns.

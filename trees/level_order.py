@@ -27,3 +27,6 @@ def levelOrder(root):
             path.append(level)
             
     return path
+
+# Time complexity: O(n) (Since each node is processed once)
+# Space complexity: O(n/2) (In the worst case, which is a complete binary tree, the bottom level has n/2 nodes.)

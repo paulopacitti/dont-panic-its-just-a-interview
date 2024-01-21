@@ -1,4 +1,5 @@
 # description: https://leetcode.com/problems/search-suggestions-system/
+import bisect
 
 class TrieNode:
     def __init__(self, value = None, end = False):
@@ -51,6 +52,22 @@ def build_trie(words):
             current = current.children[word[i]]
         current.end = True
     return root
+
+def suggestedProductsBisect(products, searchWord):
+    sorted_products = sorted(products)
+    result = []
+
+    for i in range(1, len(searchWord) + 1):
+        prefix = searchWord[0:i]
+        index = bisect.bisect_left(sorted_products, prefix)
+        suggestions = []
+
+        for j in range(index, min(index+3, len(sorted_products))):
+            if sorted_products[j].startswith(prefix):
+                suggestions.append(sorted_products[j])
+        result.append(suggestions)
+
+    return result
 
 
 p = ["mobile","mouse","moneypot","monitor","mousepad"]

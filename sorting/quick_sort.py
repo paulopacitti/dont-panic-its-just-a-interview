@@ -1,31 +1,25 @@
-import math
-
 def quick_sort(array):
     quick_sort_util(array, 0, len(array)-1)
     return array
 
 def quick_sort_util(array, left, right):
-    if left >= right:
-        return
-
-    index = partition(array, left, right)
-    quick_sort_util(array, left, index-1)
-    quick_sort_util(array, index, right)
-
-    return
+    if left < right:
+        pivot = partition(array, left, right)
+        quick_sort_util(array, left, pivot-1)
+        quick_sort_util(array, pivot+1, right)
 
 def partition(array, left, right):
-    pivot = array[math.floor((left + right)/2)]
-    while left <= right:
-        while array[left] < pivot:
+    pivot = right
+    right -= 1
+    while left < right:
+        while array[left] < array[pivot]:
             left += 1
-        while array[right] > pivot:
+        while array[right] > array[pivot]:
             right -= 1
         
-        if left <= right:
+        if left < right:
             array[left], array[right] = array[right], array[left]
-            left += 1
-            right -= 1
+    array[left], array[pivot] = array[pivot], array[left]
     return left
 
 arr = [10, 7, 8, 9, 1, 5]

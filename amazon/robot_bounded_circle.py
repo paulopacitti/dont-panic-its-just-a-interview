@@ -2,33 +2,21 @@
 # tags: amazon greedy
 
 def is_robot_bounded(instructions):
-    x = 0
-    y = 0
-    current_direction = 'N'
-    directions = {'N': (0,1), 'E': (1, 0), 'S': (0, -1), 'W': (-1,0)}
-    for c in instructions:
-        if c == 'G':
-            x += directions[current_direction][0]
-            y += directions[current_direction][1]
-        elif c == 'R':
-            if current_direction == 'N':
-                current_direction = 'E'
-            elif current_direction == 'E':
-                current_direction = 'S'
-            elif current_direction == 'S':
-                current_direction = 'W'
-            elif current_direction == 'W':
-                current_direction = 'N'
-        elif c == 'L':
-            if current_direction == 'N':
-                current_direction = 'W'
-            elif current_direction == 'W':
-                current_direction = 'S'
-            elif current_direction == 'S':
-                current_direction = 'E'
-            elif current_direction == 'E':
-                current_direction = 'N'
-    return (x == 0 and y == 0) or current_direction != 'N'
+    directions = ["N", "E", "S", "W"]
+    coordinates = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+    current_direction = 0
+    current_position = (0, 0)
+
+    for inst in instructions:
+        if inst == "R":
+            current_direction = (current_direction + 1) % len(directions)
+        elif inst == "L":
+            current_direction = (current_direction - 1) % len(directions)
+        elif inst == "G":
+            current_position = (current_position[0] + coordinates[current_direction][0], current_position[1] + coordinates[current_direction][1])
+    
+    print(current_direction, current_position)
+    return current_direction != 0 or current_position == (0,0)
 
 print(is_robot_bounded('GGLLGG'))
 
